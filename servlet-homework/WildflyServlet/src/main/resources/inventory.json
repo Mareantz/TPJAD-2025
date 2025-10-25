@@ -1,0 +1,32 @@
+{
+  "u-1001": {
+    "items": ["Laptop", "4K Monitor", "Docking Station", "Headphones"]
+  },
+  "u-1002": {
+    "items": ["Wireless Mouse", "Mechanical Keyboard"]
+  },
+  "u-1003": {
+    "items": ["Mobile phone", "Smartwatch"]
+  },
+  "u-1004": {
+    "items": ["Docking Station", "Tablet", "Monitor Arm"]
+  },
+  "u-1005": {
+    "items": ["Backpack", "Battery Pack"]
+  },
+  "u-1006": {
+    "items": ["Notebook", "Pen"]
+  },
+  "u-1007": {
+    "items": ["Chair", "Lamp"]
+  },
+  "u-1008": {
+    "items": ["Macbook Pro 16", "Magic Mouse"]
+  },
+  "u-1009": {
+    "items": ["External Hard Drive"]
+  },
+  "u-1010": {
+    "items": ["Server Rack", "Optic Fiber Cable"]
+  }
+}

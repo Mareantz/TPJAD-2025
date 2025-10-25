@@ -1,0 +1,12 @@
+[
+  { "userId": "u-1001", "username": "v.popescu", "status": "Active" },
+  { "userId": "u-1002", "username": "a.ionescu", "status": "Active" },
+  { "userId": "u-1003", "username": "d.radu", "status": "Inactive" },
+  { "userId": "u-1004", "username": "m.stoica", "status": "Active" },
+  { "userId": "u-1005", "username": "g.dumitrescu", "status": "Active" },
+  { "userId": "u-1006", "username": "l.constantin", "status": "Pending" },
+  { "userId": "u-1007", "username": "s.kovacs", "status": "Active" },
+  { "userId": "u-1008", "username": "e.vasile", "status": "Active" },
+  { "userId": "u-1009", "username": "c.barbu", "status": "Inactive" },
+  { "userId": "u-1010", "username": "t.nagy", "status": "Active" }
+]
