@@ -1,13 +1,13 @@
-# Project: Distributed Servlet Application (Microservice Simulation)
+# Homework: Distributed Servlet Application (Microservice Simulation)
 
-**Student:** `[Your Name Here]`
-**Group:** `[Your Group Number Here]`
+**Student:** `Ciotir Marian-Augustin`
+**Group:** `244`
 
 ---
 
 ## 1. Introduction
 
-This project demonstrates the core principles of a distributed, **microservice-based architecture** using fundamental Java technologies. The primary goal is to fulfill the requirement of having multiple servlets, running on different application servers, communicating with each other to complete a single user request.
+This homework demonstrates the core principles of a distributed, **microservice-based architecture** using fundamental Java technologies. The primary goal is to fulfill the requirement of having multiple servlets, running on different application servers, communicating with each other to complete a single user request.
 
 The application simulates a company's backend dashboard. A central **API Gateway** servlet receives a request from a user. To fulfill this request, it communicates with two separate, independent "microservices": a **User Service** and an **Inventory Service**. These services run on their own servers, and the gateway is responsible for aggregating their data and returning a single, combined response to the user.
 
