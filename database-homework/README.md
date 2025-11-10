@@ -82,35 +82,32 @@ graph TD
     subgraph "users-api (Port 8081)"
         API_U[CustomerController]
         DB_U[(PostgreSQL: user_db)]
-        API_U --> DB_U
     end
 
     subgraph "products-api (Port 8082)"
         API_P[ProductController]
         DB_P[(OracleDB: product_db)]
-        API_P --> DB_P
     end
 
     subgraph "sales-api (Port 8083)"
         API_S[SalesOrderController]
         DB_S[(MS SQL Server: sales_db)]
-        API_S --> DB_S
     end
 
     %% --- Define The Data Flow for Loading the Home Page ---
-
+    
     U -- 1. GET / (HTTP Request) --> GUI
-
+    
     %% Fork: GUI calls all 3 APIs
     GUI -- 2. GET /api/customers --> API_U
     GUI -- 2. GET /api/products --> API_P
     GUI -- 2. GET /api/orders --> API_S
-
+    
     %% API 1 (Users)
     API_U -- 3. findCustomers() --> DB_U
     DB_U -- 4. List<Customer> --> API_U
     API_U -- 5. JSON Response --> GUI_JOIN
-
+    
     %% API 2 (Products)
     API_P -- 3. findProducts() --> DB_P
     DB_P -- 4. List<Product> --> API_P
@@ -120,7 +117,7 @@ graph TD
     API_S -- 3. findOrders() --> DB_S
     DB_S -- 4. List<SalesOrder> --> API_S
     API_S -- 5. JSON Response --> GUI_JOIN
-
+    
     %% Join: GUI merges the data
     GUI --> GUI_JOIN
     GUI_JOIN -- 6. Create List<OrderDetails> --> GUI_HTML
