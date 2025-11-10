@@ -331,6 +331,3 @@ The following tests can be performed from the GUI at `http://localhost:8080` to 
     - **Output:** The customer "Jane" is gone.
     - **Verification:** The "Orders" table still shows Jane's order, but the customer name column now displays "N/A (ID not found)". This correctly demonstrates what happens to the logical link when a parent record is removed.
 
-```
-
-```
