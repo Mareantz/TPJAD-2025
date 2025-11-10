@@ -16,16 +16,15 @@ h1 {
     padding-bottom: 10px;
 }
 
-/* Main layout */
 .container {
     display: flex;
-    flex-wrap: wrap; /* Allows columns to stack on small screens */
+    flex-wrap: wrap;
     gap: 30px;
 }
 
 .col {
-    flex: 1; /* Each column takes equal space */
-    min-width: 300px; /* Prevents columns from getting too small */
+    flex: 1;
+    min-width: 300px;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -33,7 +32,6 @@ h1 {
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-/* All tables */
 table {
     border-collapse: collapse;
     width: 100%;
@@ -54,7 +52,6 @@ tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-/* All forms */
 form {
     background-color: #fdfdfd;
     border: 1px solid #eee;
@@ -64,7 +61,7 @@ form {
 }
 
 form input {
-    width: calc(100% - 20px); /* Full width minus padding */
+    width: calc(100% - 20px);
     padding: 8px 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -85,7 +82,6 @@ form button:hover {
     background-color: #2980b9;
 }
 
-/* Links */
 a {
     color: #3498db;
     text-decoration: none;

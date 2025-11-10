@@ -15,13 +15,10 @@ public class SalesOrder {
 
     private LocalDateTime orderDate;
 
-    // This is the "link" to the Postgres 'customers' table
     private Long customerIdLink;
 
-    // This is the "link" to the Oracle 'products' table
     private Long productIdLink;
 
-    // This runs automatically when a new order is saved
     @PrePersist
     protected void onCreate() {
         orderDate = LocalDateTime.now();

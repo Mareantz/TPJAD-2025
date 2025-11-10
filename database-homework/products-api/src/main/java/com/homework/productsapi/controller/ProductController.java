@@ -14,19 +14,16 @@ public class ProductController {
     @Autowired
     private ProductRepository repository;
 
-    // READ (All)
     @GetMapping
     public List<Product> getAllProducts() {
         return repository.findAll();
     }
 
-    // CREATE
     @PostMapping
     public Product createProduct(@RequestBody Product product) {
         return repository.save(product);
     }
 
-    // DELETE
     @DeleteMapping("/{id}")
     public void deleteProduct(@PathVariable Long id) {
         repository.deleteById(id);
@@ -34,10 +31,9 @@ public class ProductController {
 
     @GetMapping("/{id}")
     public Product getProductById(@PathVariable Long id) {
-        return repository.findById(id).orElse(null); // or throw 404
+        return repository.findById(id).orElse(null);
     }
 
-    // UPDATE
     @PutMapping("/{id}")
     public Product updateProduct(@PathVariable Long id, @RequestBody Product updatedProduct) {
         return repository.findById(id)
@@ -46,6 +42,6 @@ public class ProductController {
                     product.setPrice(updatedProduct.getPrice());
                     return repository.save(product);
                 })
-                .orElse(null); // or throw 404
+                .orElse(null);
     }
 }
