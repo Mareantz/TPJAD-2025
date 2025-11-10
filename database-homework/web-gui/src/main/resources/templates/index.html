@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Database Homework</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+
+<h1>🚀 Database Homework GUI</h1>
+
+<div class="container">
+
+    <div class="col">
+        <h2>Customers (Postgres)</h2>
+        <form method="post" th:action="@{/create-customer}">
+            <h3>New Customer</h3>
+            <input type="text" placeholder="Full Name" name="fullName" required />
+            <input type="email" placeholder="Email" name="email" required />
+            <button type="submit">Create</button>
+        </form>
+
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="customer : ${customers}">
+                <td th:text="${customer.id}">1</td>
+                <td th:text="${customer.fullName}">Test User</td>
+                <td th:text="${customer.email}">test@user.com</td>
+                <td>
+                    <a th:href="@{/edit-customer/{id}(id=${customer.id})}">Edit</a> |
+                    <a th:href="@{/delete-customer/{id}(id=${customer.id})}">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="col">
+        <h2>Products (Oracle)</h2>
+        <form method="post" th:action="@{/create-product}">
+            <h3>New Product</h3>
+            <input type="text" placeholder="Product Name" name="productName" required />
+            <input type="number" step="0.01" placeholder="Price" name="price" required />
+            <button type="submit">Create</button>
+        </form>
+
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Actions</th> </tr>
+            </thead>
+            <tbody>
+            <tr th:each="product : ${products}">
+                <td th:text="${product.id}">1</td>
+                <td th:text="${product.productName}">Test Product</td>
+                <td th:text="${'€' + product.price}">€10.99</td>
+                <td>
+                    <a th:href="@{/edit-product/{id}(id=${product.id})}">Edit</a> |
+                    <a th:href="@{/delete-product/{id}(id=${product.id})}">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<div>
+    <h2>Orders (SQL Server)</h2>
+    <form method="post" th:action="@{/create-order}">
+        <h3>New Order (This is the "Link")</h3>
+        <input type="number" placeholder="Customer ID" name="customerIdLink" required />
+        <input type="number" placeholder="Product ID" name="productIdLink" required />
+        <button type="submit">Create Order</button>
+    </form>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>Date</th>
+            <th>Customer (from Postgres)</th>
+            <th>Product (from Oracle)</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="order : ${orders}">
+            <td th:text="${order.id}">1</td>
+            <td th:text="${#temporals.format(order.orderDate, 'yyyy-MM-dd HH:mm')}">2025-01-01</td>
+
+            <td th:text="${order.customerName + ' (ID: ' + order.customerId + ')'}">John Doe (ID: 1)</td>
+
+            <td th:text="${order.productName + ' (ID: ' + order.productId + ')'}">Laptop (ID: 1)</td>
+
+            <td>
+                <a th:href="@{/edit-order/{id}(id=${order.id})}">Edit</a> |
+                <a th:href="@{/delete-order/{id}(id=${order.id})}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
